@@ -19,6 +19,7 @@ const config = {
     plugins: [
       cp({
         targets: [
+          { src: "./src/setting.html", dest: "dist" },
           { src: "./manifest.json", dest: "dist" },
           { src: "./icon.png", dest: "dist" },
         ],
