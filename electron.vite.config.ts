@@ -20,7 +20,7 @@ const config = {
       cp({
         targets: [
           { src: "./manifest.json", dest: "dist" },
-          { src: "./icon.jpg", dest: "dist" },
+          { src: "./icon.png", dest: "dist" },
         ],
       }),
     ],

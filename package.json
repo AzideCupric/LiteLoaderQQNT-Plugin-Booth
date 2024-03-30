@@ -11,7 +11,18 @@
     "deploy-mac": "cp -r dist/* ~/Library/Containers/com.tencent.qq/Data/LiteLoaderQQNT/plugins/LLOneBot/",
     "build-win": "npm run build && npm run deploy-win",
     "deploy-win": "cmd /c \"xcopy /C /S /Y dist\\* %USERPROFILE%\\documents\\LiteLoaderQQNT\\plugins\\LLOneBot\\\"",
-    "deploy-win-pwsh": "powershell -Command \"Copy-Item -Path dist\\* -Destination $env:USERPROFILE\\documents\\LiteLoaderQQNT\\plugins\\LLOneBot\\ -Recurse -Force\""
+    "deploy-win-pwsh": "powershell -Command \"Copy-Item -Path dist\\* -Destination $env:USERPROFILE\\documents\\LiteLoaderQQNT\\plugins\\LLOneBot\\ -Recurse -Force\"",
+    "eslint": "eslint --cache --report-unused-disable-directives",
+    "eslint:fix": "pnpm eslint --fix",
+    "stylelint": "stylelint",
+    "stylelint:fix": "pnpm stylelint --fix",
+    "lint": "pnpm lint:js && pnpm lint:style",
+    "lint:fix": "pnpm lint:js:fix && pnpm lint:style:fix",
+    "lint:js": "pnpm eslint \"**/*.{js,jsx,ts,tsx,cjs,mjs,vue}\"",
+    "lint:js:fix": "pnpm eslint:fix \"**/*.{js,jsx,ts,tsx,cjs,mjs,vue}\"",
+    "lint:style": "pnpm stylelint \"**/*.{css,scss}\"",
+    "lint:style:fix": "pnpm stylelint:fix \"**/*.{css,scss}\"",
+    "prepare": "node .husky/install.mjs"
   },
   "author": "",
   "devDependencies": {
@@ -37,5 +48,8 @@
     "typescript": "^5.4.3",
     "vite": "^5.2.7",
     "vite-plugin-cp": "^4.0.8"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
   }
 }
