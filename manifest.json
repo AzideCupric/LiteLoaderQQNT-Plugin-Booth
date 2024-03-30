@@ -1,18 +1,26 @@
 {
     "manifest_version": 4,
     "type": "extension",
-    "name": "Liteloader Booth",
-    "slug": "liteloader_booth",
+    "name": "插件展柜",
+    "slug": "plugin_booth",
     "description": "LiteLoaderQQNT的插件展台插件",
     "version": "0.1.0",
     "authors": [{
         "name": "Azide",
-        "link": "https://github.com/Azide"
+        "link": "https://github.com/AzideCupric"
     }],
     "platform": ["win32", "linux", "darwin"],
     "injects": {
-        "renderer": "./src/renderer.js",
-        "main": "./src/main.js",
-        "preload": "./src/preload.js"
-    }
+        "renderer": "./renderer/index.js",
+        "main": "./main/index.cjs",
+        "preload": "./preload/preload.cjs"
+    },
+    "repository": {
+        "repo": "AzideCupric/LiteLoaderQQNT-Plugin-Booth",
+        "branch": "main",
+        "Release": {
+          "tag": "v0.1.0"
+        }
+
+      }
 }
